@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Khitanan - Al Walpa</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .card {
+    max-width: 480px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(46, 125, 50, 0.25);
+    position: relative;
+  }
+
+  .top-deco {
+    background: linear-gradient(135deg, #2e7d32, #4caf50);
+    padding: 50px 30px 70px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .top-deco::before,
+  .top-deco::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .top-deco::before {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    left: -60px;
+  }
+
+  .top-deco::after {
+    width: 150px;
+    height: 150px;
+    bottom: -80px;
+    right: -40px;
+  }
+
+  .bismillah {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .invite-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+
+  .icon-scissor {
+    font-size: 40px;
+    margin-top: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .name-section {
+    text-align: center;
+    margin-top: -45px;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .name-box {
+    background: #fff;
+    border-radius: 18px;
+    padding: 26px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 2px solid #a5d6a7;
+  }
+
+  .name-label {
+    font-size: 12px;
+    color: #558b2f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .child-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: #1b5e20;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .child-age {
+    font-size: 15px;
+    color: #4e6b4f;
+    font-weight: 400;
+  }
+
+  .content {
+    padding: 30px 32px 10px;
+    text-align: center;
+  }
+
+  .greeting {
+    font-size: 14.5px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #c8e6c9;
+  }
+
+  .divider span {
+    color: #4caf50;
+    font-size: 18px;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .detail-item {
+    background: #f1f8f2;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .detail-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: #2e7d32;
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .detail-text .label {
+    font-size: 11px;
+    color: #7a8b7a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+  }
+
+  .detail-text .value {
+    font-size: 15px;
+    color: #1b5e20;
+    font-weight: 600;
+  }
+
+  .detail-text .value.small {
+    font-size: 13px;
+    font-weight: 500;
+    color: #33502f;
+  }
+
+  .map-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 8px 16px;
+    background: #2e7d32;
+    color: #fff !important;
+    border-radius: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .closing {
+    padding: 20px 32px 36px;
+    text-align: center;
+  }
+
+  .closing p {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 18px;
+  }
+
+  .signature {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #1b5e20;
+    font-weight: 700;
+  }
+
+  .footer-deco {
+    text-align: center;
+    padding-bottom: 24px;
+    color: #a5d6a7;
+    font-size: 20px;
+    letter-spacing: 12px;
+  }
+
+  @media (max-width: 480px) {
+    .card { border-radius: 18px; }
+    .child-name { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="top-deco">
+    <div class="bismillah">Bismillahirrahmanirrahim</div>
+    <div class="subtitle">Undangan Acara</div>
+    <div class="invite-title">Khitanan</div>
+    <div class="icon-scissor">✂️</div>
+  </div>
+
+  <div class="name-section">
+    <div class="name-box">
+      <div class="name-label">Yang Berkhitan</div>
+      <div class="child-name">Al Walpa</div>
+      <div class="child-age">Usia 20 Tahun</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <p class="greeting">
+      Assalamu'alaikum Warahmatullahi Wabarakatuh<br><br>
+      Dengan penuh rasa syukur kepada Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara khitanan putra kami:
+    </p>
+
+    <div class="divider"><span>❖</span></div>
+
+    <div class="details">
+      <div class="detail-item">
+        <div class="detail-icon">🕔</div>
+        <div class="detail-text">
+          <div class="label">Waktu</div>
+          <div class="value">Pukul 05.00 WIB</div>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <div class="detail-icon">📅</div>
+        <div class="detail-text">
+          <div class="label">Hari &amp; Tanggal</div>
+          <div class="value small">Menyusul / sesuai konfirmasi</div>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <div class="detail-icon">📍</div>
+        <div class="detail-text">
+          <div class="label">Lokasi</div>
+          <div class="value small">Kediaman Keluarga Al Walpa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p>
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu. Atas kehadiran dan doanya, kami ucapkan terima kasih.
+    </p>
+    <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    <div class="signature">Keluarga Besar Al Walpa</div>
+  </div>
+
+  <div class="footer-deco">• • •</div>
+</div>
+
+</body>
+</html>
